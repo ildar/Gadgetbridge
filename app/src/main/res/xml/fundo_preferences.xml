@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="pref_category_fundo_general"
+        android:title="@string/pref_header_general">
+        <!--        <EditTextPreference android:maxLength="5" android:title="@string/miband_prefs_fitness_goal" android:key="mi_fitness_goal" android:defaultValue="10000" android:inputType="number"/>-->
+        <!--        <EditTextPreference android:maxLength="2" android:title="@string/activity_prefs_sleep_duration" android:key="activity_user_sleep_duration" android:inputType="number"/>-->
+        <!--        <EditTextPreference android:maxLength="4" android:title="@string/activity_prefs_calories_burnt" android:key="activity_user_calories_burnt" android:defaultValue="2000" android:inputType="number"/>-->
+        <!--        <EditTextPreference android:maxLength="5" android:title="@string/activity_prefs_distance_meters" android:key="activity_user_distance_meters" android:defaultValue="5" android:inputType="number"/>-->
+        <!--        <EditTextPreference android:maxLength="3" android:title="@string/activity_prefs_activetime_minutes" android:key="activity_user_activetime_minutes" android:defaultValue="60" android:inputType="number"/>-->
+
+        <PreferenceScreen
+            android:key="fundo_inactivity_warning_key"
+            android:persistent="false"
+            android:summary="@string/mi2_prefs_inactivity_warnings_summary"
+            android:title="@string/mi2_prefs_inactivity_warnings">
+            <PreferenceCategory android:title="@string/mi2_prefs_inactivity_warnings" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="fundo_inactivity_warnings"
+                android:summary="@string/mi2_prefs_inactivity_warnings_summary"
+                android:title="@string/mi2_prefs_inactivity_warnings" />
+            <EditTextPreference
+                android:defaultValue="60"
+                android:dependency="fundo_inactivity_warnings"
+                android:inputType="numberSigned"
+                android:key="fundo_inactivity_warnings_threshold"
+                android:maxLength="3"
+                android:title="@string/mi2_prefs_inactivity_warnings_threshold" />
+            <nodomain.freeyourgadget.gadgetbridge.util.TimePreference
+                android:defaultValue="06:00"
+                android:dependency="fundo_inactivity_warnings"
+                android:key="fundo_inactivity_warnings_start"
+                android:title="@string/mi2_prefs_do_not_disturb_start" />
+            <nodomain.freeyourgadget.gadgetbridge.util.TimePreference
+                android:defaultValue="22:00"
+                android:dependency="fundo_inactivity_warnings"
+                android:key="fundo_inactivity_warnings_end"
+                android:title="@string/mi2_prefs_do_not_disturb_end" />
+            <PreferenceCategory
+                android:dependency="fundo_inactivity_warnings"
+                android:title="@string/fundo_prefs_inactivity_repetitions">
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_inactivity_repetitions_mo"
+                    android:title="@string/fundo_prefs_inactivity_mo" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_inactivity_repetitions_tu"
+                    android:title="@string/fundo_prefs_inactivity_tu" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_inactivity_repetitions_we"
+                    android:title="@string/fundo_prefs_inactivity_we" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_inactivity_repetitions_th"
+                    android:title="@string/fundo_prefs_inactivity_th" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_inactivity_repetitions_fr"
+                    android:title="@string/fundo_prefs_inactivity_fr" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_inactivity_repetitions_sa"
+                    android:title="@string/fundo_prefs_inactivity_sa" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_inactivity_repetitions_su"
+                    android:title="@string/fundo_prefs_inactivity_su" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="fundo_water_warning_key"
+            android:persistent="false"
+            android:summary="@string/fundo_prefs_water_warnings_summary"
+            android:title="@string/fundo_prefs_water_warnings">
+            <PreferenceCategory android:title="@string/fundo_prefs_water_warnings" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="fundo_water_warnings"
+                android:summary="@string/fundo_prefs_water_warnings_summary"
+                android:title="@string/fundo_prefs_water_warnings" />
+            <EditTextPreference
+                android:defaultValue="60"
+                android:dependency="fundo_water_warnings"
+                android:inputType="numberSigned"
+                android:key="fundo_water_warnings_threshold"
+                android:maxLength="3"
+                android:title="@string/fundo_prefs_water_warnings_threshold" />
+            <nodomain.freeyourgadget.gadgetbridge.util.TimePreference
+                android:defaultValue="06:00"
+                android:dependency="fundo_water_warnings"
+                android:key="fundo_water_warnings_start"
+                android:title="@string/fundo_prefs_water_start" />
+            <nodomain.freeyourgadget.gadgetbridge.util.TimePreference
+                android:defaultValue="22:00"
+                android:dependency="fundo_water_warnings"
+                android:key="fundo_water_warnings_end"
+                android:title="@string/fundo_prefs_water_end" />
+            <PreferenceCategory
+                android:dependency="fundo_water_warnings"
+                android:title="@string/fundo_prefs_water_repetitions">
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_water_repetitions_mo"
+                    android:title="@string/fundo_prefs_water_mo" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_water_repetitions_tu"
+                    android:title="@string/fundo_prefs_water_tu" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_water_repetitions_we"
+                    android:title="@string/fundo_prefs_water_we" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_water_repetitions_th"
+                    android:title="@string/fundo_prefs_water_th" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_water_repetitions_fr"
+                    android:title="@string/fundo_prefs_water_fr" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_water_repetitions_sa"
+                    android:title="@string/fundo_prefs_water_sa" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="fundo_prefs_water_repetitions_su"
+                    android:title="@string/fundo_prefs_water_su" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="fundo_handmove_display"
+            android:summary="@string/fundo_handmove_display_summary"
+            android:title="@string/fundo_handmove_display" />
+        <PreferenceScreen
+            android:key="fundo_do_not_disturb_key"
+            android:persistent="false"
+            android:summary="@string/mi2_prefs_do_not_disturb_summary"
+            android:title="@string/mi2_prefs_do_not_disturb">
+            <PreferenceCategory android:title="@string/mi2_prefs_do_not_disturb" />
+            <ListPreference
+                android:defaultValue="@string/p_off"
+                android:entries="@array/zetime_do_not_disturb"
+                android:entryValues="@array/zetime_do_not_disturb_values"
+                android:key="fundo_do_not_disturb"
+                android:summary="%s"
+                android:title="@string/mi2_prefs_do_not_disturb" />
+            <nodomain.freeyourgadget.gadgetbridge.util.TimePreference
+                android:defaultValue="22:00"
+                android:key="fundo_do_not_disturb_start"
+                android:title="@string/mi2_prefs_do_not_disturb_start" />
+            <nodomain.freeyourgadget.gadgetbridge.util.TimePreference
+                android:defaultValue="07:00"
+                android:key="fundo_do_not_disturb_end"
+                android:title="@string/mi2_prefs_do_not_disturb_end" />
+        </PreferenceScreen>
+        <!--    </PreferenceCategory>-->
+        <!--    <PreferenceCategory android:title="@string/fundo_title_heartrate" android:key="pref_category_fundo_heartrate">-->
+        <PreferenceScreen
+            android:key="fundo_heartrate_alarm_key"
+            android:persistent="false"
+            android:summary="@string/fundo_title_heart_rate_alarm_summary"
+            android:title="@string/fundo_title_heart_rate_alarm">-->
+
+            <ListPreference
+                android:defaultValue="0"
+                android:entries="@array/prefs_fundo_heartrate_measurement_interval"
+                android:entryValues="@array/prefs_fundo_heartrate_measurement_interval_values"
+                android:key="fundo_heartrate_interval"
+                android:summary="%s"
+                android:title="@string/prefs_title_heartrate_measurement_interval" />
+
+            <nodomain.freeyourgadget.gadgetbridge.util.TimePreference
+                android:defaultValue="07:00"
+                android:key="fundo_heartrate_time_start"
+                android:title="@string/fundo_heartrate_time_start" />
+            <nodomain.freeyourgadget.gadgetbridge.util.TimePreference
+                android:defaultValue="22:00"
+                android:key="fundo_heartrate_time_stop"
+                android:title="@string/fundo_heartrate_time_stop" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

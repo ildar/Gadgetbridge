@@ -716,6 +716,27 @@
         <item>3600</item>
     </string-array>
 
+    <string-array name="prefs_fundo_heartrate_measurement_interval">
+        <item name="0">@string/off</item>
+        <item name="1">@string/interval_one_minute</item>
+        <item name="2">@string/interval_two_minutes</item>
+        <item name="5">@string/interval_five_minutes</item>
+        <item name="10">@string/interval_ten_minutes</item>
+        <item name="15">@string/interval_fifteen_minutes</item>
+        <item name="30">@string/interval_thirty_minutes</item>
+        <item name="60">@string/interval_one_hour</item>
+    </string-array>
+    <string-array name="prefs_fundo_heartrate_measurement_interval_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+
     <string-array name="notifications_timeout">
         <item>@string/no_limit</item>
         <item>@string/seconds_5</item>
@@ -812,7 +833,7 @@
         <item>@string/pref_media_forward</item>
         <item>@string/pref_media_rewind</item>
     </string-array>
-    
+
     <string name="pref_button_action_disabled">Disabled</string>
     <string name="pref_media_play">Media Play</string>
     <string name="pref_media_pause">Media Pause</string>

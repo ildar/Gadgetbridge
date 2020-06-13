@@ -38,12 +38,14 @@ public class GBDaoGenerator {
     private static final String SAMPLE_STEPS = "steps";
     private static final String SAMPLE_RAW_KIND = "rawKind";
     private static final String SAMPLE_HEART_RATE = "heartRate";
+    private static final String BLOODPRESSURE_SYSTOLE = "BloodPressureSystole";
+    private static final String BLOODPRESSURE_DIASTOLE = "BloodPressureDiastole";
     private static final String TIMESTAMP_FROM = "timestampFrom";
     private static final String TIMESTAMP_TO = "timestampTo";
 
 
     public static void main(String[] args) throws Exception {
-        Schema schema = new Schema(27, MAIN_PACKAGE + ".entities");
+        Schema schema = new Schema(30, MAIN_PACKAGE + ".entities");
 
         Entity userAttributes = addUserAttributes(schema);
         Entity user = addUserInfo(schema, userAttributes);
@@ -73,7 +75,7 @@ public class GBDaoGenerator {
         addJYouActivitySample(schema, user, device);
         addWatchXPlusHealthActivitySample(schema, user, device);
         addWatchXPlusHealthActivityKindOverlay(schema, user, device);
-
+        addFunDoActivitySample(schema, user, device);
         addHybridHRActivitySample(schema, user, device);
         addCalendarSyncState(schema, device);
         addAlarms(schema, user, device);
@@ -188,6 +190,20 @@ public class GBDaoGenerator {
         addDateValidityTo(deviceAttributes);
 
         return deviceAttributes;
+    }
+
+    private static Entity addFunDoActivitySample(Schema schema, Entity user, Entity device) {
+        Entity activitySample = addEntity(schema, "FunDoActivitySample");
+        activitySample.implementsSerializable();
+        addCommonActivitySampleProperties("AbstractActivitySample", activitySample, user, device);
+        //activitySample.addIntProperty(SAMPLE_RAW_INTENSITY).notNull().codeBeforeGetterAndSetter(OVERRIDE);
+        activitySample.addIntProperty(SAMPLE_STEPS).notNull().codeBeforeGetterAndSetter(OVERRIDE);
+        activitySample.addIntProperty(SAMPLE_RAW_KIND).notNull().codeBeforeGetterAndSetter(OVERRIDE);
+        activitySample.addIntProperty("BloodOxygen").notNull();
+        activitySample.addIntProperty(BLOODPRESSURE_SYSTOLE).notNull();
+        activitySample.addIntProperty(BLOODPRESSURE_DIASTOLE).notNull();
+        activitySample.addIntProperty(SAMPLE_HEART_RATE).notNull().codeBeforeGetterAndSetter(OVERRIDE);
+        return activitySample;
     }
 
     private static Entity addMakibesHR3ActivitySample(Schema schema, Entity user, Entity device) {
