@@ -47,10 +47,16 @@ public class FunDoDeviceCoordinator extends AbstractDeviceCoordinator {
     @Override
     public DeviceType getSupportedType(GBDeviceCandidate candidate) {
         String name = candidate.getDevice().getName();
-        if (name == null || !name.startsWith("M4S")) {
+        if (name == null) {
             return DeviceType.UNKNOWN;
         }
-        return DeviceType.FUNDO;
+        if (name.startsWith("M4S")) {
+            return DeviceType.FUNDO;
+        }
+        if (name.startsWith(" smart watch")) {
+            return DeviceType.FUNDO;
+        }
+         return DeviceType.UNKNOWN;
     }
 
     @Override
