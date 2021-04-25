@@ -446,7 +446,7 @@
 
         <provider
             android:name=".contentprovider.PebbleContentProvider"
-            android:authorities="com.getpebble.android.provider"
+            android:authorities="com.getpebble.android.provider-debug"
             android:exported="true" />
         <provider
             android:name="androidx.core.content.FileProvider"
