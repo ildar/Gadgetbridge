@@ -8,19 +8,23 @@ public class FunDoConstants {
 
     public static final UUID FunDo_SERVICE_FEE7 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "FEE7"));
     public static final UUID FunDo_SERVICE_FEE7_C_FEA1 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "FEA1"));//notify, read; realtime step data; stops after write 0 to
-    public static final UUID FunDo_SERVICE_FEE7_C_FEC8 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "FEC8"));//indicate
+    //public static final UUID FunDo_SERVICE_FEE7_C_FEC8 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "FEC8"));//indicate
     public static final UUID FunDo_SERVICE_FEE7_C_FEC9 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "FEC9"));//read; get mac adress
-    public static final UUID FunDo_SERVICE_FEE7_C_FEC7 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "FEC7"));//write
+    //public static final UUID FunDo_SERVICE_FEE7_C_FEC7 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "FEC7"));//write
+    public static final UUID FunDo_SERVICE_FE59 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "FE59"));//read,write,notify
+    public static final UUID FunDo_SERVICE_FE59_C_8EC9 = UUID.fromString("8ec90003-f315-4f60-9fb8-838830daea50");//write,indicate
 
-    public static final UUID FunDo_SERVICE_FFC0 = UUID.fromString("f000ffc0-0451-4000-b000-000000000000");
-    public static final UUID FunDo_SERVICE_FFC0_C_FFC1 = UUID.fromString("f000ffc1-0451-4000-b000-000000000000");//notify, write, write no response
-    public static final UUID FunDo_SERVICE_FFC0_C_FFC2 = UUID.fromString("f000ffc2-0451-4000-b000-000000000000");//notify, write, write no response
+    //public static final UUID FunDo_SERVICE_FFC0 = UUID.fromString("f000ffc0-0451-4000-b000-000000000000");
+    //public static final UUID FunDo_SERVICE_FFC0_C_FFC1 = UUID.fromString("f000ffc1-0451-4000-b000-000000000000");//notify, write, write no response
+    //public static final UUID FunDo_SERVICE_FFC0_C_FFC2 = UUID.fromString("f000ffc2-0451-4000-b000-000000000000");//notify, write, write no response
+    public static final UUID FunDo_SERVICE_3802 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "3802"));//read,write,notify
+    public static final UUID FunDo_SERVICE_3802_C_4A02 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "4A02"));//read,write,notify
 
     //This is the main Service used to transfer data:
     public static final UUID FunDo_SERVICE3 = UUID.fromString("c3e6fea0-e966-1000-8000-be99c223df6a");
     public static final UUID FunDo_SERVICE3_NOTIFY = UUID.fromString("c3e6fea2-e966-1000-8000-be99c223df6a");
     public static final UUID FunDo_SERVICE3_WRITE = UUID.fromString("c3e6fea1-e966-1000-8000-be99c223df6a");
-    public static final UUID FunDo_SERVICE_2902 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "2902"));
+    //public static final UUID FunDo_SERVICE_2902 = UUID.fromString(String.format(AbstractBTLEDeviceSupport.BASE_UUID, "2902"));
 
     public static final byte SCMD_GetFirmwareInfo = 0x12;
     public static final byte SCMD_BLOOD_O2 = -78;

@@ -130,7 +130,8 @@ public class FunDoDeviceSupport extends AbstractBTLEDeviceSupport {
         addSupportedService(GattService.UUID_SERVICE_GENERIC_ATTRIBUTE);
         addSupportedService(FunDoConstants.FunDo_SERVICE3);
         addSupportedService(FunDoConstants.FunDo_SERVICE_FEE7);
-        addSupportedService(FunDoConstants.FunDo_SERVICE_FFC0);
+        addSupportedService(FunDoConstants.FunDo_SERVICE_3802);
+        addSupportedService(FunDoConstants.FunDo_SERVICE_FE59);
 
     }
 
@@ -190,10 +191,8 @@ public class FunDoDeviceSupport extends AbstractBTLEDeviceSupport {
         builder.notify(this.measureCharacteristic, true);
         realtimeStepsCharacteristic = getCharacteristic(FunDoConstants.FunDo_SERVICE_FEE7_C_FEA1);
         builder.notify(realtimeStepsCharacteristic, false);// realtime step data, disable
-        c2 = getCharacteristic(FunDoConstants.FunDo_SERVICE_FFC0_C_FFC1);
+        c2 = getCharacteristic(FunDoConstants.FunDo_SERVICE_3802_C_4A02);
         builder.notify(c2, true);
-        c3 = getCharacteristic(FunDoConstants.FunDo_SERVICE_FFC0_C_FFC2);
-        builder.notify(c3, true);
         LOG.info("Initializing FunDo: start configuration");
         sendShortCMD(builder, (byte) 4, (byte) 0x55);
         sendShortCMD(builder, (byte) 1, (byte) 14);
